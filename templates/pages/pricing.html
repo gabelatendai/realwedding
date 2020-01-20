@@ -1,0 +1,216 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block  content %}
+
+  <!-- page-header -->
+    <div class="page-header" style="background-image: url('{%  static 'img/r1.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <!-- page caption -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div class="page-caption">
+                        <h1 class="page-title">About us</h1>
+                    </div>
+                </div>
+                <!-- /.page caption -->
+            </div>
+        </div>
+        <!-- page caption -->
+        <div class="page-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}" class="breadcrumb-link">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">About us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- page breadcrumb -->
+    </div>
+    <!-- /.page-header -->
+   <!-- price-sections -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="offset-xl-1 col-xl-10 offset-lg-1 col-lg-10 col-md-12 col-sm-12 col-12">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="pricing-box pricing-basic">
+                                <!-- pricing box -->
+                                <h4 class="pricing-name">Basic</h4>
+                                <div class="price">FREE</div>
+                                <div class="price-feature">
+                                    <ul class="listnone">
+                                        <li>1 Listing</li>
+                                        <li>30 Days availability</li>
+                                        <li>No Featured Listing</li>
+                                        <li>Email Support</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary">Get One Month Free</a>
+                            </div>
+                            <!-- /.pricing box -->
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="pricing-box pricing-standard">
+                                <!-- pricing box -->
+                                <h4 class="pricing-name">Pro</h4>
+                                <div class="price"><span class="price-sign">$</span> 10</div>
+                                <div class="price-feature">
+                                    <ul class="listnone">
+                                        <li>3 Listing</li>
+                                        <li>180 Days availability</li>
+                                        <li>1 Featured Listing</li>
+                                        <li>Priority Email Support</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-white">Select Plan</a>
+                            </div>
+                            <!-- /.pricing box -->
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="pricing-box pricing-premium">
+                                <!-- pricing box -->
+                                <h4 class="pricing-name">Enterprise</h4>
+                                <div class="price"><span class="price-sign">$</span> 30</div>
+                                <div class="price-feature">
+                                    <ul class="listnone">
+                                        <li>5 Listing</li>
+                                        <li>360 Days availability</li>
+                                        <li>3 Featured Listing</li>
+                                        <li>Phone and Email Support</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary">Select Plan</a>
+                            </div>
+                            <!-- /.pricing box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- price-payments-sections -->
+        <div class="space-small">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-1 col-xl-10 offset-lg-1 col-lg-10 col-md-12 col-sm-12 col-12">
+                        <h2 class="text-center mb40">Trusted By Millions</h2>
+                        <div class="row">
+                            <!-- feature -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="well-box feature-left">
+                                    <div class="feature-icon"><img src="images/secure-payment.png" alt=""></div>
+                                    <div class="feature-content">
+                                        <h4 class="feature-title">Secure Payment</h4>
+                                        <p>Your information is protected by secure payment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.feature -->
+                            <!-- feature -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="well-box feature">
+                                    <div class="">
+                                        <h4 class="feature-title">We accept all of the following credit cards.</h4>
+                                        <div class="mt10 payment-card">
+                                            <a href="#"><i class="fab fa-cc-visa fa-2x"></i></a>
+                                            <a href="#"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                                            <a href="#"> <i class="fab  fa-cc-paypal fa-2x"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.feature -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.price-payments-sections -->
+    </div>
+    <!-- /.price-sections -->
+    <!-- f/q sections -->
+    <div class="space-medium bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+                    <div class="section-title">
+                        <!-- section title start-->
+                        <h2>Some Questions Might You Have</h2>
+                    </div>
+                    <!-- /.section title start-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <ul class="listnone">
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>Why realwed wedding directory website template ?</h3>
+                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqu enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </li>
+                        <!-- /.faq-qa-block -->
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>What are the benefit of the premium plan?</h3>
+                            <p>Lorem ipsuim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </li>
+                        <!-- /.faq-qa-block -->
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>What are the benefit of the purchasing a yeraly plan?</h3>
+                            <p>Consectetim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </li>
+                        <!-- faq-qa-block -->
+                    </ul>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <ul class="listnone">
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>Can i cancel my subscription for premium plan?</h3>
+                            <p>Tempor incididunt ut labore et dolore magna aliquanim ad minim veniamquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </li>
+                        <!-- /.faq-qa-block -->
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>How do my pay for my premium plan?</h3>
+                            <p>Quis nostrud exercitation ullamco lorem ipusm doplor laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </li>
+                        <!-- /.faq-qa-block -->
+                        <!-- faq-qa-block -->
+                        <li class="faq-qa-block">
+                            <h3>Where can i find my billing information?</h3>
+                            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquirem ipsum dolor sit ameonsectetim veniamex ea commodo consequat. </p>
+                        </li>
+                        <!-- /.faq-qa-block -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.f/q sections -->
+    <!-- social-media-section -->
+    <div class="social-media-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+                    <h3 class="text-white mb0 mt10">Would you like to connect with us</h3>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 text-right">
+                    <div class="social-icons">
+                        <a href="#" class="icon-square"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-twitter"></i> </a>
+                        <a href="#" class="icon-square"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.social-media-section -->
+{% endblock %}

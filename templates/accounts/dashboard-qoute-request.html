@@ -1,0 +1,73 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}|Requested Quotes{% endblock %}
+{% block  content %}
+
+
+   <div class="dashboard-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="dashboard-page-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h3 class="dashboard-page-title">Request List</h3>
+                                    <p>Check your request quote.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-filter-row mb20">
+                            <div class="row">
+                                <div class="col-xl-3">
+                                    <select class="form-control wide" id="exampleFormControlSelect1">
+                                        <option>Select Your Listing</option>
+                                        <option>Select Your Listing #1</option>
+                                        <option>Select Your Listing #2</option>
+                                        <option>Select Your Listing #3</option>
+                                        <option>Select Your Listing #4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card request-list-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Wedding Date</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% if quote %}
+                                {% for qots in quote %}
+
+                                     <tr>
+                                        <td class="requester-name">{{ qots.name }}</td>
+                                        <td class="wedding-date">{{ qots.wedding_date }}</td>
+                                        <td class="requester-id">{{ qots.email }}</td>
+                                        <td class="requester-phone">{{ qots.phone }}</td>
+                                        <td class="requester-action"><a href="{% url 'qoutedel' qots.id %}" class="btn btn-outline-pink btn-xs ">delete</a></td>
+
+                                    {% endfor %}
+                                    {% else %}
+<div class="col-md-12">
+
+              <p>NO Listings Available</p>
+          </div>
+                                {% endif %}
+
+</tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%  endblock %}

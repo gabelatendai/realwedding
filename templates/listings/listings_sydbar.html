@@ -1,0 +1,283 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load humanize %}
+{% block  content %}
+    <!-- page-header -->
+    <div class="page-header" style="background-image: url('{%  static 'img/r1.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <!-- page caption -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div class="page-caption">
+                        <h1 class="page-title">Listing Venue</h1>
+                    </div>
+                </div>
+                <!-- /.page caption -->
+            </div>
+        </div>
+        <!-- page caption -->
+        <div class="page-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}" class="breadcrumb-link">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Listing Gird View</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- page breadcrumb -->
+    </div>
+    <!-- /.page-header -->
+     <!-- vendor-section -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-12">
+
+                     {% if listings %}
+    {% for listing in listings %}
+                    <div class="vendor-thumbnail list-view">
+                        <!-- Vendor thumbnail -->
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 border-right pr-0">
+                                <div class="vendor-img">
+                                    <!-- Vendor img -->
+                                    <a href="#"><div class="zoomimg"><img src="{{ listing.photo_main.url }}" alt="" class="img-fluid"></div></a>
+                                    <div class="wishlist-sign"><a href="#" class="btn-wishlist"><i class="fa fa-heart"></i></a></div>
+                                </div>
+                            </div>
+                            <!-- /.Vendor img -->
+                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 pl-0">
+                                <div class="vendor-content">
+                                    <!-- Vendor Content -->
+                                    <h2 class="vendor-title"><a href="#" class="title">{{ listing.title }}</a></h2>
+                                    <!--<p class="vendor-address">Ahmedabad, Gujarat.</p>
+                                    <!-- /.Vendor meta -->
+                                </div>
+                                <div class="vendor-meta m-0">
+                                    <div class="vendor-meta-item vendor-meta-item-bordered">
+                                        <span class="vendor-price">
+                                    ${{ listing.price }}
+                                        </span>
+                                        <span class="vendor-text">Start From</span></div>
+                                    <div class="vendor-meta-item vendor-meta-item-bordered">
+                                        <span class="vendor-guest">
+                                              {{ listing.capacity }}+
+                                         </span>
+                                        <span class="vendor-text">Guest</span>
+                                    </div>
+                                    <div class="vendor-meta-item vendor-meta-item-bordered">
+                                        <span class="rating-star">
+                                    <i class="fa fa-star rated"></i>
+                                    <i class="fa fa-star rated"></i>
+                                    <i class="fa fa-star rated"></i>
+                                    <i class="fa fa-star rated"></i>
+                                    <i class="fa fa-star rate-mute"></i>
+                                    </span>
+                                        <span class="rating-count vendor-text">(20)</span></div>
+                                </div>
+                                <!-- /.Vendor Content -->
+                            </div>
+                        </div>
+                    </div>
+                      {% endfor %}
+          {% else %}
+          <div class="col-md-12">
+
+              <p>NO Listings Available</p>
+          </div>
+          {% endif %}
+                     <!-- paginations -->
+
+                   <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <div class="row">
+        <div class="col-md-12">
+            {% if listings.has_other_pages %}
+          <ul class="pagination">
+          {% if listings.has_previous %}
+              <li class="page-item ">
+              <a class="page-link" href="?page={{ listings.previous_page_number }}">&laquo;</a>
+            </li>
+          {% else %}
+              <li class="page-item disabled">
+              <a class="page-link">&laquo;</a>
+            </li>
+              {% endif %}
+        {%  for i in listings.paginator.page_range %}
+          {% if listings.number == i %}
+              <li class="page-item active">
+               <a class="page-link" >{{ i }}</a>
+            </li>
+              {% else %}
+  <li class="page-item">
+              <a class="page-link" href="?=page{{ i }}">{{ i }}</a>
+            </li>
+    {% endif %}
+      {% endfor %}
+{% if listings.has_next %}
+              <li class="page-item ">
+              <a class="page-link" href="?page={{ listings.next_page_number }}">&raquo;</a>
+            </li>
+{% else %}
+              <li class="page-item disabled">
+              <a class="page-link" href="#">&raquo;</a>
+            </li>
+              {% endif %}
+          </ul>
+            {% endif %}
+
+        </div>
+      </div>
+                </div>
+            </div>
+            <!-- /.paginations -->
+                </div>
+                <!-- sidebar-section -->
+                <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
+                    <div class="filter-form">
+                             <form class="form-row">
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h3 class="widget-title">filter</h3>
+                            </div>
+
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <select class="wide">
+                                    <option value="Venue Type">Venue Type</option>
+                                    <option value="Hotel">Hotel</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Castle">Castle</option>
+                                    <option value="Barns">Barns</option>
+                                    <option value="Resort">Resort</option>
+                                    <option value="Church">Church</option>
+                                    <option value="In Door">In Door</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <select class="wide">
+                                    <option value="Guest">Guest</option>
+                                    <option value="1 - 100">1 - 100</option>
+                                    <option value="1 - 200">100 - 200</option>
+                                    <option value="1 - 500">200 - 500</option>
+                                    <option value="1 - 1000">500 - 1000</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <select class="wide">
+                                    <option value="Price">Price</option>
+                                    <option value="$100 tp $500">$100 to $500</option>
+                                    <option value="$500 tp $2000">$500 to $2000</option>
+                                    <option value="$2000 tp $3500">$2000 to $3500</option>
+                                    <option value="$3500 tp $4500">$3500 to $4500</option>
+                                    <option value="$4500 tp $5500">$4500 to $5500</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb20">
+                                <!-- aminites -->
+                                <div class="aminities">
+                                    <h3 class="widget-title"> Amenities</h3>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1"> Groom Lounge</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2"> Bridal Suite</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Table and chairs</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                        <label class="custom-control-label" for="customCheck4"> Get Ready Rooms</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                        <label class="custom-control-label" for="customCheck5">Event Rentals</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                        <label class="custom-control-label" for="customCheck6">Outside Vendors</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                        <label class="custom-control-label" for="customCheck7"> Bar Services</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                        <label class="custom-control-label" for="customCheck8"> Catering Services</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck9">
+                                        <label class="custom-control-label" for="customCheck9"> Clean Up</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck10">
+                                        <label class="custom-control-label" for="customCheck10">Event Planner</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                        <label class="custom-control-label" for="customCheck11">Wifi</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                        <label class="custom-control-label" for="customCheck12">Pet Friendly</label>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                        <label class="custom-control-label" for="customCheck13">Accommodations</label>
+                                    </div>
+                                </div>
+                                <!-- /.aminites -->
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <button class="btn btn-default btn-block" type="submit">Find Venue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.sidebar-section -->
+            </div>
+
+        </div>
+    </div>
+    <!-- social-media-section -->
+    <div class="social-media-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+                    <h3 class="text-white mb0 mt10">Would you like to connect with us</h3>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 text-right">
+                    <div class="social-icons">
+                        <a href="#" class="icon-square"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-twitter"></i> </a>
+                        <a href="#" class="icon-square"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.social-media-section -->
+{% endblock %}

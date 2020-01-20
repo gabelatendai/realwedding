@@ -1,0 +1,38 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+{% block title %}|Update Listing{% endblock %}
+{% block  content %}
+
+
+     <div class="dashboard-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="dashboard-page-header">
+                            <h3 class="dashboard-page-title">Add New Listing</h3>
+                            <p>Lists present multiple line items vertically as a single continuous element.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"> <h4 class="mb0">About Listing</h4></div>
+                    <div class="">
+                       {% include 'partials/_alerts.html' %}
+
+                                    {% for field in form %}
+                                {{ field.error }}
+                                {% endfor %}
+                            <form  method="POST">
+                                {% csrf_token %}
+                                   {{ form|crispy}}
+                                <input type="submit" value="Update">
+
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%  endblock %}

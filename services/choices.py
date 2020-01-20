@@ -1,0 +1,48 @@
+guest_capacity = {
+    '20': 20,
+    '30': 30,
+    '40': 40,
+    '50': 50,
+    '60': 60,
+    '80': 40,
+    '90': 90,
+    '150': 150,
+    '200': 200,
+    '400': 400,
+    '600': 600,
+    '800': 800,
+}
+price_choices = {
+    '100000': '$100,000',
+    '200000': '$200,000',
+    '300000': '$300,000',
+    '400000': '$400,000',
+    '500000': '$500,000',
+    '600000': '$600,000',
+    '700000': '$700,000',
+    '800000': '$800,000',
+    '900000': '$900,000',
+    '1000000': '$1M+',
+}
+vendor_choices = {
+    'venue': 'Venue',
+    'Florist': 'Florist',
+    'cakes': 'Cake',
+    'Photographer': 'Photographer',
+    'catering': 'Catering',
+    'clothing': 'Clothing',
+}
+city_choices = {
+    'Gweru': 'Gweru',
+    'Harare': 'Harare',
+    'Mutare': 'Mutare',
+    'Marondera': 'Marondera',
+    'Bulawayo': 'Bulawayo',
+    'Kwekwe': 'Kwekwe',
+    'Mutoko': 'Mutoko',
+    'Chinhoyi': 'Chinhoyi',
+    'Rusape': 'Rusape',
+    'Masvingo': 'Masvingo',
+    'Chipinge': 'Chipinge',
+    'Kadoma': 'Kadoma',
+}

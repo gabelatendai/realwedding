@@ -1,0 +1,596 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}| Reviews{% endblock %}
+{% block  content %}
+
+
+     <div class="dashboard-content">
+            <div class="container">
+                <div class="dashboard-page-header">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h3 class="dashboard-page-title">Reviews</h3>
+                            <p>Check your latest reviews.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-filter-row mb20">
+                    <div class="row">
+                        <div class="offset-xl-9 col-xl-3">
+                            <select class="form-control wide" id="exampleFormControlSelect1">
+                                <option>Select Your Listing</option>
+                                <option>Select Your Listing #1</option>
+                                <option>Select Your Listing #2</option>
+                                <option>Select Your Listing #3</option>
+                                <option>Select Your Listing #4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-6 col-12">
+                        <div class="card card-rating">
+                            <div class="card-body">
+                                <h5 class="mb30">Average Ratings</h5>
+                                <div class="review-total">4.8 </div>
+                                <div class="review-text">Reviews</div>
+                                <span class="rated mt40  d-block"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa  fa-star"></i> <i class="fa fa-star-half"></i> </span>
+                                <small>4.8 average based on 8 ratings.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-6 col-12">
+                        <div class="card card-review-summary">
+                            <div class="card-body">
+                                <h5 class="mb30">Reviews Summary</h5>
+                                <div class="row mb-2">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <h5 class="mb0 text-right">Quality Service</h5>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                        <div class="progress mt10">
+                                            <div class="progress-bar" role="progressbar" style="width: 86%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-3  col-sm-12 col-12 text-right">
+                                        <h6 class="text-dark mb0">86%</h6>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <h5 class="mb0 text-right">Facilities</h5>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                        <div class="progress mt10">
+                                            <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-3 col-sm-12 col-12 text-right">
+                                        <h6 class="text-dark mb0">35%</h6>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <h5 class="mb0 text-right">Staff</h5>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                        <div class="progress mt10">
+                                            <div class="progress-bar" role="progressbar" style="width: 7%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-3 col-sm-12 col-12 text-right">
+                                        <h6 class="text-dark mb0">7%</h6>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <h5 class="mb0 text-right">Flexibility</h5>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                        <div class="progress mt10">
+                                            <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-3 col-sm-12 col-12 text-right">
+                                        <h6 class="text-dark mb0">5%</h6>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <h5 class="mb0 text-right">Value of money</h5>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                        <div class="progress mt10">
+                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-3 col-sm-12 col-12 text-right">
+                                        <h6 class="text-dark mb0">10%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card review-summary-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Rating</th>
+                                        <th>Email</th>
+                                        <th>Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="review-summary-name">Jessica J. Titus</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span><span class="ml-2">5</span></td>
+                                        <td class="review-summary-id">jessicatitus@gmail.com</td>
+                                        <td class="review-summary-time">5 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-one" data-text-swap="close" data-text-original="Details" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample1">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-2.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">Jessica J. Titus</span>
+                                                                <span class="user-review-date">11 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>                                                         </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas  fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Facilities</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Staff</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Flexibility</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Value of money</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.review-list -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-descripttions -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="review-summary-name">Liston R. Saenz</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span><span class="ml-2">5</span></td>
+                                        <td class="review-summary-id">lisarsaenz@gmail.com</td>
+                                        <td class="review-summary-time">7 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-two" data-text-swap="close" data-text-original="Details" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample2">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-1.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">Liston R. Saenz</span>
+                                                                <span class="user-review-date">12 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+
+                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas  fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Facilities</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Staff</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Flexibility</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Value of money</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.review-list -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-descripttions -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="review-summary-name">Cheryl R. Westbrook</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span><span class="ml-2">5</span></td>
+                                        <td class="review-summary-id">cheryrwestbrook@gmail.com</td>
+                                        <td class="review-summary-time">8 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-three" data-text-swap="close" data-text-original="Details" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample3">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-1.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">Cheryl R. Westbrook</span>
+                                                                <span class="user-review-date">12 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+
+                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas  fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Facilities</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Staff</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Flexibility</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Value of money</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.review-list -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-descripttions -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="review-summary-name">Lucille J. Roybal</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span><span class="ml-2">4.5</span></td>
+                                        <td class="review-summary-id">lucill@gmail.com</td>
+                                        <td class="review-summary-time">9 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-four" data-text-swap="close" data-text-original="Details" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample4">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-3.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">Lucille J. Roybal</span>
+                                                                <span class="user-review-date">14 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i>
+
+                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far  fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+                                                                        <!-- /.review-list -->
+                                                                        <!-- review-list -->
+                                                                        <div class="review-list">
+                                                                            <div class="review-for">Facilities</div>
+                                                                            <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                            <div class="review-number">5</div>
+                                                                        </div>
+                                                                        <!-- /.review-list -->
+                                                                        <!-- review-list -->
+                                                                        <div class="review-list">
+                                                                            <div class="review-for">Staff</div>
+                                                                            <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                            <div class="review-number">4</div>
+                                                                        </div>
+                                                                        <!-- /.review-list -->
+                                                                        <!-- review-list -->
+                                                                        <div class="review-list">
+                                                                            <div class="review-for">Flexibility</div>
+                                                                            <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                            <div class="review-number">4</div>
+                                                                        </div>
+                                                                        <!-- /.review-list -->
+                                                                        <!-- review-list -->
+                                                                        <div class="review-list">
+                                                                            <div class="review-for">Value of money</div>
+                                                                            <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                            <div class="review-number">4</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /.review-list -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- /.review-descripttions -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="review-summary-name">Ebony W. Peet</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="far fa-star"></i></span><span class="ml-2">4</span></td>
+                                        <td class="review-summary-id">ebony@gmail.com</td>
+                                        <td class="review-summary-time">7 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-five" data-text-swap="close" data-text-original="Details" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample5">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-2.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">ebony@gmail.com</span>
+                                                                <span class="user-review-date">14 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="far fa-star"></i>
+
+                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far  fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+
+                                                                <!-- /.review-list -->
+
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Facilities</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Staff</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Flexibility</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Value of money</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span></div>
+                                                                        <div class="review-number">4</div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.review-list -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-descripttions -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="review-summary-name">Minnie C. Nicholson</td>
+                                        <td class="review-summary-rating"> <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span><span class="ml-2">5</span></td>
+                                        <td class="review-summary-id">minnecnicholson@gmail.com</td>
+                                        <td class="review-summary-time">5 hours ago</td>
+                                        <td class="review-summary-action"><a class="btn btn-outline-pink btn-xs" data-toggle="collapse" id="example-six" data-text-swap="close" data-text-original="Details" href="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">Details  </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" class="expandable-info">
+                                            <div class="collapse expandable-collapse" id="collapseExample6">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <!-- review-user -->
+                                                        <div class="review-user">
+                                                            <div class="user-img"> <img src="images/review-pic-3.jpg" alt="star rating jquery" class="rounded-circle"></div>
+                                                            <div class="user-meta">
+                                                                <span class="user-name">Minnie C. Nicholson</span>
+                                                                <span class="user-review-date">14 May, 2018</span>
+                                                                <div class="given-review">
+                                                                    <span class="rated"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+
+                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-user -->
+                                                        <!-- review-descripttions -->
+                                                        <div class="review-descriptions">
+                                                            <p>Donec accumsan consequat massa non gravida. Morbi pharetra mollis tortor ac maximus. Nunc dapibus bibendum urna, in egestas dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Fusce ullamcorper sit amet augue a volutpat. Cras ultrices dictum ante vel iaculis. Aenean molestie molestie elementum. Nullam semper vel mauris et semper. </p>
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Quality Service</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas  fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+
+                                                                <!-- /.review-list -->
+
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Facilities</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Staff</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Flexibility</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+
+                                                                    <!-- /.review-list -->
+                                                                    <!-- review-list -->
+                                                                    <div class="review-list">
+                                                                        <div class="review-for">Value of money</div>
+                                                                        <div class="review-rating"><span class="rated"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span></div>
+                                                                        <div class="review-number">5</div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.review-list -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.review-descripttions -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{%  endblock %}

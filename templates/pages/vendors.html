@@ -1,0 +1,117 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block  content %}
+
+    <!-- /.header -->
+    <!-- page-header -->
+    <div class="page-header" style="background-image: url({% static 'img/hero-1.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- page caption -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div class="page-caption">
+                        <h1 class="page-title">Vendor Categories</h1>
+                    </div>
+                </div>
+                <!-- /.page caption -->
+            </div>
+        </div>
+        <!-- page caption -->
+        <div class="page-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}" class="breadcrumb-link">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Vendor Categories</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- page breadcrumb -->
+    </div>
+    <!-- /.page-header -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'venues' %}"><img src="{% static 'img/home-inside-1.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"> <a href="{% url 'venues' %}">Venue</a> <span class="category-count">{{ venue.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'photographers' %}"><img src="{% static 'img/pp.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"> <a href="{% url 'photographers' %}">Photographer</a> <span class="category-count">{{ photography.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'florist' %}"><img src="{% static 'img/ff.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"><a href="{% url 'florist' %}">Florist</a> <span class="category-count">{{ florist.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'cakes' %}"><img src="{% static 'img/cake.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"> <a href="{% url 'cakes' %}">Wedding Cakes</a> <span class="category-count">{{ cakes.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'clothing' %}"><img src="{% static 'img/cl.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"> <a href="{% url 'clothing' %}">Wedding  Dresses</a> <span class="category-count">{{ clothing.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'dj' %}"><img src="{%  static 'img/1.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"><a href="{% url 'dj' %}">Dj</a> <span class="category-count">{{ dj.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="card-category">
+                        <div class="category-image zoomimg"><a href="{% url 'catering' %}"><img src="{%  static 'img/cake.jpg' %}" alt=""></a></div>
+                        <div class="category-content">
+                            <h3 class="cateogry-title"><a href="{% url 'catering' %}">Catering</a> <span class="category-count">{{ catering.count }}</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- social-media-section -->
+    <div class="social-media-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+                    <h3 class="text-white mb0 mt10">Would you like to connect with us</h3>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 text-right">
+                    <div class="social-icons">
+                        <a href="#" class="icon-square"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-twitter"></i> </a>
+                        <a href="#" class="icon-square"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="icon-square"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.social-media-section -->
+{% endblock %}

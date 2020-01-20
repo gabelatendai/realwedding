@@ -1,0 +1,61 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}| Listings{% endblock %}
+{% block  content %}
+
+
+ <div class="dashboard-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="dashboard-page-header">
+                            <h3 class="dashboard-page-title">My Listing</h3>
+                            <p>Lists present multiple line items vertically as a single continuous element.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-right mb20">
+                        <a href="{% url 'listing-create' %}" class="btn btn-default btn-sm">add new Listing</a>
+                    </div>
+                </div>
+                <div class="dashboard-vendor-list">
+                    <ul class="list-unstyled">
+
+                         {% if listings %}
+    {% for listing in listings %}
+                        <li>
+                            <div class="dashboard-list-block">
+                                <div class="row">
+                                    <div class="col-xl-2 col-lg-4 col-md-12 col-sm-12 col-12">
+                                        <div class="dashboard-list-img"><a href="{% url 'listing-update' listing.id %}">
+                                             {% if listing.photo_main %}
+                                            <img src="{{ listing.photo_main.url }}" alt="" class="img-fluid">
+                                        {% endif %}</a></div>
+                                    </div>
+                                    <div class="col-xl-7 col-lg-5 col-md-6 col-sm-12 col-12 ">
+                                        <div class="dashboard-list-content">
+                                            <h3 class="mb0"><a href="{% url 'listing-update' listing.id %}" class="title">{{ listing.title }}</a></h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                                        <div class="dashboard-list-btn"><a href="{% url 'listing-update' listing.id %}" class="btn btn-outline-violate btn-xs mr10">edit</a><a href="{% url 'listing-delete' listing.id %}" class="btn btn-outline-pink btn-xs ">delete</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                         {% endfor %}
+          {% else %}
+          <div class="col-md-12">
+
+              <p>NO Listings Available</p>
+          </div>
+          {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{%  endblock %}
